@@ -1,0 +1,20 @@
+configuration :
+ - name : wallace
+   ip : 128.237.198.180 
+   port : 3018
+
+ - name : jodie
+   ip : 128.237.181.13
+   port : 2017
+
+sendRules :
+ - action : drop
+   seqNum : 1
+ - action : delay
+   seqNum : 2
+ - action : duplicate
+   src : jodie
+
+receiveRules :
+ - action : drop
+   src : wallace
